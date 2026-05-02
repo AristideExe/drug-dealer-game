@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.Player
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="title">
+		<p>@Player.Network.Owner.DisplayName</p>
+		<p>@Player.Money $</p>
+	</div>
+</root>
+
+@code
+{
+	public PlayerManager Player { get; set; }
+
+	protected override void OnUpdate()
+	{
+		Panel.SetClass( "hidden", Player.Network.IsOwner );
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Player.Money );
+}

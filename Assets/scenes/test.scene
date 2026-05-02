@@ -551,18 +551,18 @@
           "__guid": "dfe273da-b75c-44e6-978f-6fe7481ae382",
           "__enabled": true,
           "Flags": 0,
-          "HUD": {
-            "_type": "component",
-            "component_id": "0620462b-8e2d-4edd-9f1b-0ed57530fa1c",
-            "go": "be40ae07-6597-4991-9785-e12be6567eb1",
-            "component_type": "HUD"
-          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
-          "OnComponentUpdate": null
+          "OnComponentUpdate": null,
+          "PlayerInfosUi": {
+            "_type": "component",
+            "component_id": "1ae23c4e-0802-49cc-9aa8-061e91cca740",
+            "go": "d93556cf-17fd-44e0-8ae7-47e94e691282",
+            "component_type": "PlayerInfosUI"
+          }
         }
       ],
       "Children": [
@@ -698,6 +698,61 @@
               "Static": false,
               "Surface": null,
               "SurfaceVelocity": "0,0,0"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "d93556cf-17fd-44e0-8ae7-47e94e691282",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Player Infos",
+          "Position": "0,0,90",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "c81c2240-ea53-4daa-811f-52cca1ed359f",
+              "__enabled": true,
+              "Flags": 0,
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PanelSize": "500,200",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "Sandbox.PlayerInfosUI",
+              "__guid": "1ae23c4e-0802-49cc-9aa8-061e91cca740",
+              "__enabled": true,
+              "Flags": 0,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
             }
           ],
           "Children": []
