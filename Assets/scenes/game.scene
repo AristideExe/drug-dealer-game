@@ -219,6 +219,128 @@
       "Children": []
     },
     {
+      "__guid": "db15d5a9-e8d8-4cc8-8072-0537d61067bf",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-353.282257,7.77638245,107.46698",
+      "Rotation": "0,0.130526662,0,0.991444886",
+      "Scale": "1,1,1",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "029dec47-7bbc-48c3-932c-45c5f629457a",
+          "__enabled": true,
+          "Flags": 0,
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "EnablePostProcessing": true,
+          "FieldOfView": 60,
+          "FovAxis": "Horizontal",
+          "IsMainCamera": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "PostProcessAnchor": null,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "RenderTexture": null,
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "89bdfa96-179a-4f73-8526-c6fe893a2511",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Network Manager",
+      "Position": "-125.46434,110.152008,6.01463318",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "7c55c297-648e-42bb-86fa-9944dbca63aa",
+          "__enabled": true,
+          "Flags": 0,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "go": "f25646ae-b2b8-492b-afa1-3fab7046785c"
+          },
+          "SpawnPoints": [
+            {
+              "_type": "gameobject",
+              "go": "ffdd0776-24f3-4ca0-82d3-2ba77f68b775"
+            }
+          ],
+          "StartServer": true
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "ffdd0776-24f3-4ca0-82d3-2ba77f68b775",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Spawn Point",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "506075af-8dba-4b45-8dfb-975d5cb60c8a",
+          "__enabled": true,
+          "Flags": 0,
+          "Color": "0.8902,0.31765,0.05098,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "f25646ae-b2b8-492b-afa1-3fab7046785c",
       "__version": 2,
       "Flags": 0,
@@ -408,15 +530,33 @@
           "OnComponentStart": null,
           "OnComponentUpdate": null,
           "RemoveUnownedItems": true,
-          "Source": "LocalUser",
+          "Source": "OwnerConnection",
           "WorkshopItems": []
         },
         {
           "__type": "Wallet",
-          "__guid": "8f3106a6-a60f-414f-b74e-bf850e78aa44",
+          "__guid": "8b7ae2e3-4da5-4d62-96b3-ae992b2942c7",
           "__enabled": true,
           "Flags": 0,
-          "money": 200,
+          "money": 100,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "Sandbox.Player.PlayerManager",
+          "__guid": "dfe273da-b75c-44e6-978f-6fe7481ae382",
+          "__enabled": true,
+          "Flags": 0,
+          "HUD": {
+            "_type": "component",
+            "component_id": "f19c871d-66d4-44d4-99cc-b8ea7b81905e",
+            "go": "be40ae07-6597-4991-9785-e12be6567eb1",
+            "component_type": "HUD"
+          },
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -565,59 +705,11 @@
       ]
     },
     {
-      "__guid": "db15d5a9-e8d8-4cc8-8072-0537d61067bf",
+      "__guid": "be40ae07-6597-4991-9785-e12be6567eb1",
       "__version": 2,
       "Flags": 0,
-      "Name": "Camera",
-      "Position": "-353.282257,7.77638245,107.46698",
-      "Rotation": "0,0.130526662,0,0.991444886",
-      "Scale": "1,1,1",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "029dec47-7bbc-48c3-932c-45c5f629457a",
-          "__enabled": true,
-          "Flags": 0,
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "EnablePostProcessing": true,
-          "FieldOfView": 60,
-          "FovAxis": "Horizontal",
-          "IsMainCamera": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "PostProcessAnchor": null,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "RenderTexture": null,
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "89bdfa96-179a-4f73-8526-c6fe893a2511",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Network Manager",
-      "Position": "-125.46434,110.152008,6.01463318",
+      "Name": "HUD",
+      "Position": "-103.274536,392.653015,199.526123",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -629,53 +721,28 @@
       "OwnerTransfer": 1,
       "Components": [
         {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "7c55c297-648e-42bb-86fa-9944dbca63aa",
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "50b52eb6-7d5e-4bef-85d2-0cac61cdf034",
           "__enabled": true,
           "Flags": 0,
+          "AutoScreenScale": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "go": "f25646ae-b2b8-492b-afa1-3fab7046785c"
-          },
-          "SpawnPoints": [
-            {
-              "_type": "gameobject",
-              "go": "ffdd0776-24f3-4ca0-82d3-2ba77f68b775"
-            }
-          ],
-          "StartServer": true
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "ffdd0776-24f3-4ca0-82d3-2ba77f68b775",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Spawn Point",
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
+          "Opacity": 1,
+          "Scale": 1,
+          "ScaleStrategy": "FollowDesktopScaling",
+          "TargetCamera": null,
+          "ZIndex": 100
+        },
         {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "506075af-8dba-4b45-8dfb-975d5cb60c8a",
+          "__type": "Sandbox.UI.HUD",
+          "__guid": "f19c871d-66d4-44d4-99cc-b8ea7b81905e",
           "__enabled": true,
           "Flags": 0,
-          "Color": "0.8902,0.31765,0.05098,1",
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -709,18 +776,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "f8202dfa-7502-4765-888a-7c8cf8c32fe3"
+        }
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
       },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "776d116a-4fea-41a3-af8c-5c50ea1e76b7"
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
