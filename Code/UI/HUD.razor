@@ -1,0 +1,27 @@
+@using Sandbox.Player
+@inherits PanelComponent
+@namespace Sandbox.UI
+
+<root>
+	<div class="vitals">
+		<p>@Player.Money $</p>
+	</div>
+</root>
+
+@code
+{
+	private PlayerManager Player { get; set; }
+
+	protected override void OnUpdate()
+	{
+		if ( Player is null )
+		{
+			Player = Scene.GetAllComponents<PlayerManager>().First( p => p.Network.IsOwner );
+		}
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Player?.Money );
+}

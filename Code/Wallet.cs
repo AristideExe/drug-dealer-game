@@ -2,12 +2,7 @@ using Sandbox;
 
 public sealed class Wallet : Component
 {
-	[Property] private float money;
-
-	/// <summary>
-	/// Amount of money in wallet
-	/// </summary>
-	public float Money => money;
+	[Sync] [Property] public float Money { get; private set; }
 
 	/// <summary>
 	/// Add money to wallet
@@ -15,7 +10,7 @@ public sealed class Wallet : Component
 	/// <param name="amount">Amount of money</param>
 	public void AddMoney( float amount )
 	{
-		money += amount;
+		Money += amount;
 	}
 
 	/// <summary>
@@ -24,7 +19,8 @@ public sealed class Wallet : Component
 	/// <param name="amount">Amount of money</param>
 	public void RemoveMoney( float amount )
 	{
-		money -= amount;
+		Money -= amount;
+		if (Money < 0 ) Money = 0;
 	}
 
 	/// <summary>
@@ -34,6 +30,6 @@ public sealed class Wallet : Component
 	/// <returns></returns>
 	public bool HasEnoughMoney( float amount )
 	{
-		return money >= amount;
+		return Money >= amount;
 	}
 }
