@@ -410,6 +410,19 @@
           "RemoveUnownedItems": true,
           "Source": "LocalUser",
           "WorkshopItems": []
+        },
+        {
+          "__type": "Wallet",
+          "__guid": "8f3106a6-a60f-414f-b74e-bf850e78aa44",
+          "__enabled": true,
+          "Flags": 0,
+          "money": 200,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": [
