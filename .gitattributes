@@ -1,0 +1,26 @@
+* text=auto
+
+# s&box / .NET project — Windows native, force CRLF on text files
+*.cs       text eol=crlf
+*.razor    text eol=crlf
+*.scss     text eol=crlf
+*.json     text eol=crlf
+*.sbproj   text eol=crlf
+*.scene    text eol=crlf
+*.config   text eol=crlf
+*.md       text eol=crlf
+
+# Binary assets
+*.scene_d  binary
+*.vmap     binary
+*.vmdl     binary
+*.vmat     binary
+*.vtex     binary
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.tga      binary
+*.wav      binary
+*.mp3      binary
+*.ogg      binary
+*.fbx      binary
