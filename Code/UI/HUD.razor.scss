@@ -1,20 +1,33 @@
 HUD
 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
-	.vitals
-	{
-        position: absolute;
-        top: 32px;
-        right: 32px;
-		font-size: 60px;
-		font-family: Poppins;
-		color: white;
-        text-stroke: 10px black;
-        font-weight: bold;
-    }
+  .vitals
+  {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-size: 60px;
+    font-family: Poppins;
+    color: white;
+    text-stroke: 10px black;
+    font-weight: bold;
+  }
+
+  .crosshair {
+    height: 5px;
+    width: 5px;
+    background-color: white;
+    opacity: 0.7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
 }
