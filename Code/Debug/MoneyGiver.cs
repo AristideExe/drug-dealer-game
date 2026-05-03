@@ -15,7 +15,7 @@ public sealed class MoneyGiver : Component, Component.ITriggerListener
 		if ( wallet is null ) return;
 		if (!wallet.Network.IsOwner) return;
 		
-		wallet.AddMoney(Amount);
+		wallet.RequestAddMoney(Amount);
 		_timeSinceLastGive = 0;
 	}
 }

@@ -17,11 +17,12 @@
 
 	protected override void OnUpdate()
 	{
+		if ( Player is null ) return;
 		Panel.SetClass( "hidden", Player.Network.IsOwner );
 	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Player.Money );
+	protected override int BuildHash() => System.HashCode.Combine( Player?.Money );
 }

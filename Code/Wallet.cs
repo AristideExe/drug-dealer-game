@@ -2,34 +2,38 @@ using Sandbox;
 
 public sealed class Wallet : Component
 {
-	[Sync] [Property] public float Money { get; private set; }
+	[Sync( SyncFlags.FromHost )] [Property] public float Money { get; private set; }
 
 	/// <summary>
-	/// Add money to wallet
+	/// Add money to wallet. Host-authoritative: only the host mutates Money,
+	/// callers can only act on a wallet they own.
 	/// </summary>
-	/// <param name="amount">Amount of money</param>
-	public void AddMoney( float amount )
+	/// <param name="amount">Amount of money (must be > 0)</param>
+	[Rpc.Host]
+	public void RequestAddMoney( float amount )
 	{
+		if ( amount <= 0 ) return;
+		if ( Rpc.Caller != Network.Owner ) return;
 		Money += amount;
 	}
 
 	/// <summary>
-	/// Remove money from wallet
+	/// Remove money from wallet. Refuses silently if balance is insufficient.
+	/// Host-authoritative.
 	/// </summary>
-	/// <param name="amount">Amount of money</param>
-	public void RemoveMoney( float amount )
+	/// <param name="amount">Amount of money (must be > 0)</param>
+	[Rpc.Host]
+	public void RequestRemoveMoney( float amount )
 	{
+		if ( amount <= 0 ) return;
+		if ( Rpc.Caller != Network.Owner ) return;
+		if ( Money < amount ) return;
 		Money -= amount;
-		if (Money < 0 ) Money = 0;
 	}
 
 	/// <summary>
-	/// Does the wallet has enough money in it
+	/// Does the wallet have enough money to afford the given amount.
+	/// Client-side check; the host re-validates inside RequestRemoveMoney.
 	/// </summary>
-	/// <param name="amount">Amount of money</param>
-	/// <returns></returns>
-	public bool HasEnoughMoney( float amount )
-	{
-		return Money >= amount;
-	}
+	public bool CanAfford( float amount ) => Money >= amount;
 }
