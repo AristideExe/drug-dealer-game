@@ -1,5 +1,8 @@
 using Sandbox;
 
+/// <summary>
+/// Holds a player's money balance.
+/// </summary>
 public sealed class Wallet : Component
 {
 	[Sync( SyncFlags.FromHost )] [Property] public float Money { get; private set; }
