@@ -3,8 +3,24 @@
 @namespace Sandbox.UI
 
 <root>
-	<div class="vitals">
+	@if ( Player is null )
+	{
+		return;
+	}
+
+	<div class="money">
 		<p>@Player.Money $</p>
+	</div>
+
+	<div class="vitals">
+		<div class="bar stamina">
+			<div class="bar-fill" style="width: @((int)(Player.StaminaFraction * 100))%"></div>
+			<div class="bar-label">@((int)Player.Stamina) / @((int)Player.MaxStamina)</div>
+		</div>
+		<div class="bar hp">
+			<div class="bar-fill" style="width: @((int)(Player.HpFraction * 100))%"></div>
+			<div class="bar-label">@((int)Player.Hp) / @((int)Player.MaxHp)</div>
+		</div>
 	</div>
 </root>
 
@@ -14,14 +30,12 @@
 
 	protected override void OnUpdate()
 	{
-		if ( Player is null )
-		{
-			Player = Scene.GetAllComponents<PlayerManager>().First( p => p.Network.IsOwner );
-		}
+		if ( Player is not null && Player.IsValid() ) return;
+		Player = Scene.GetAllComponents<PlayerManager>().FirstOrDefault( p => p.Network.IsOwner );
 	}
 
 	/// <summary>
-	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// The hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Player?.Money );
+	protected override int BuildHash() => System.HashCode.Combine( Player?.Money, Player?.Hp, Player?.Stamina );
 }

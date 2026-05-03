@@ -153,7 +153,7 @@
       "Name": "Plane",
       "Position": "0,0,0",
       "Rotation": "0,0,0,1",
-      "Scale": "5,5,5",
+      "Scale": "15,15,15",
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
@@ -534,19 +534,6 @@
           "WorkshopItems": []
         },
         {
-          "__type": "Wallet",
-          "__guid": "8b7ae2e3-4da5-4d62-96b3-ae992b2942c7",
-          "__enabled": true,
-          "Flags": 0,
-          "Money": 100,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null
-        },
-        {
           "__type": "Sandbox.Player.PlayerManager",
           "__guid": "dfe273da-b75c-44e6-978f-6fe7481ae382",
           "__enabled": true,
@@ -563,6 +550,33 @@
             "go": "d93556cf-17fd-44e0-8ae7-47e94e691282",
             "component_type": "PlayerInfosUI"
           }
+        },
+        {
+          "__type": "Wallet",
+          "__guid": "8b7ae2e3-4da5-4d62-96b3-ae992b2942c7",
+          "__enabled": true,
+          "Flags": 0,
+          "Money": 100,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        },
+        {
+          "__type": "Sandbox.Player.Vitals",
+          "__guid": "279e9364-f9c6-4738-b713-4a859f00bb93",
+          "__enabled": true,
+          "Flags": 0,
+          "MaxHp": 250,
+          "MaxStamina": 100,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
         }
       ],
       "Children": [
@@ -829,7 +843,7 @@
           "SurfaceVelocity": "0,0,0"
         },
         {
-          "__type": "Sandbox.Debug.MoneyGiver",
+          "__type": "MoneyGiver",
           "__guid": "961c66a2-067e-4b87-ae59-7132795ebfd5",
           "__enabled": true,
           "Flags": 0,
@@ -917,14 +931,14 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "19005537-1155-47ff-8132-81c2eaf420aa"
-        }
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "19005537-1155-47ff-8132-81c2eaf420aa"
         }
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {

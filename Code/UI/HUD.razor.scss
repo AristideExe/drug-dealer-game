@@ -6,15 +6,73 @@ HUD
 	right: 0;
 	bottom: 0;
 
-	.vitals
+	.money
 	{
-        position: absolute;
-        top: 32px;
-        right: 32px;
+		position: absolute;
+		top: 32px;
+		right: 32px;
 		font-size: 60px;
 		font-family: Poppins;
 		color: white;
-        text-stroke: 10px black;
-        font-weight: bold;
-    }
+		text-stroke: 10px black;
+		font-weight: bold;
+	}
+
+	.vitals
+	{
+		position: absolute;
+		bottom: 32px;
+		left: 32px;
+		flex-direction: column;
+		gap: 16px;
+		width: 640px;
+
+		.bar
+		{
+			position: relative;
+			height: 56px;
+			background-color: rgba(0, 0, 0, 0.6);
+			border: 3px solid rgba(0, 0, 0, 0.85);
+			border-radius: 28px;
+			overflow: hidden;
+
+			.bar-fill
+			{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				transition: width 0.15s ease-out;
+				background-angle: 180deg;
+			}
+
+			.bar-label
+			{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				font-family: Poppins;
+				font-size: 32px;
+				font-weight: bold;
+				color: white;
+				text-stroke: 8px black;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.bar.hp .bar-fill
+		{
+			background-color: #b51d1d;
+			background-image: linear-gradient(#ff7373, #5e0808);
+		}
+
+		.bar.stamina .bar-fill
+		{
+			background-color: #d4a012;
+			background-image: linear-gradient(#ffe78a, #6e4e00);
+		}
+	}
 }
